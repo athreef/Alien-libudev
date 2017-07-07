@@ -1,0 +1,12 @@
+.build/
+*.sw*
+.DS_Store
+Alien-libudev-*/
+Alien-libudev-*.tar.gz
+Build
+MANIFEST
+_alien/
+_build/
+_share/
+blib/
+MYMETA.*

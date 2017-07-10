@@ -29,5 +29,5 @@ int xs_new_ref_then_unref(const char *s) {
 }
 MODULE = TA_MODULE PACKAGE = TA_MODULE
 
-int xs_new_then_unref(class);
+int xs_new_ref_then_unref(class);
  const char *class;

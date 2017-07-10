@@ -14,6 +14,7 @@ my $build = Alien::Base::ModuleBuild->new(
     license => 'perl',
     alien_bin_requires => {
     },
+    alien_isolate_dynamic => 1,
     configure_requires => {
         'Alien::Autotools' => '0.000_006',
         'Alien::Base::ModuleBuild' => 0,

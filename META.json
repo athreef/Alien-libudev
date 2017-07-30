@@ -4,7 +4,7 @@
       "Ahmad Fatoum <athreef@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.422",
+   "generated_by" : "Module::Build version 0.4216",
    "license" : [
       "perl_5"
    ],
@@ -49,7 +49,7 @@
    "provides" : {
       "Alien::libudev" : {
          "file" : "lib/Alien/libudev.pm",
-         "version" : "0.03"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -58,6 +58,6 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.03",
+   "version" : "0.10",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }

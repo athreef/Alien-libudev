@@ -7,7 +7,7 @@ package Alien::libudev;
 
 use parent 'Alien::Base';
 
-our $VERSION = '0.01';
+our $VERSION = '0.10';
 
 =pod
 
@@ -16,6 +16,8 @@ our $VERSION = '0.01';
 =head1 NAME
 
 Alien::libudev - Perl distribution for libudev
+
+=for html <a href="https://travis-ci.org/athreef/Alien-libudev"><img src="https://travis-ci.org/athreef/Alien-libudev.svg?branch=master"></a>
 
 =head1 INSTALL
 

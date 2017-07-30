@@ -14,7 +14,7 @@ configure_requires:
   Alien::Base::ModuleBuild: '0'
   Module::Build: '0'
 dynamic_config: 1
-generated_by: 'Module::Build version 0.422, CPAN::Meta::Converter version 2.150005'
+generated_by: 'Module::Build version 0.4216, CPAN::Meta::Converter version 2.150005'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,7 +23,7 @@ name: Alien-libudev
 provides:
   Alien::libudev:
     file: lib/Alien/libudev.pm
-    version: '0.03'
+    version: '0.10'
 recommends:
   IO::Socket::SSL: '0'
 requires:
@@ -32,5 +32,5 @@ requires:
   perl: '5.008001'
 resources:
   license: http://dev.perl.org/licenses/
-version: '0.03'
+version: '0.10'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

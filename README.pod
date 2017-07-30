@@ -6,6 +6,8 @@
 
 Alien::libudev - Perl distribution for libudev
 
+=for html <a href="https://travis-ci.org/athreef/Alien-libudev"><img src="https://travis-ci.org/athreef/Alien-libudev.svg?branch=master"></a>
+
 =head1 INSTALL
 
     cpan Alien::libudev

@@ -16,13 +16,19 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Alien::gperf" : "0",
+            "Alien::autoconf" : "0",
+            "Alien::automake" : "0",
+            "Alien::libtool" : "0",
             "IO::Socket::SSL" : "0"
          }
       },
       "configure" : {
          "requires" : {
             "Alien::Base::ModuleBuild" : "0",
+            "Alien::autoconf" : "0",
+            "Alien::automake" : "0",
+            "Alien::gperf" : "0",
+            "Alien::libtool" : "0",
             "Devel::AssertOS" : "0",
             "Module::Build" : "0"
          }

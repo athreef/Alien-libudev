@@ -23,11 +23,17 @@ my $build = Alien::Base::ModuleBuild->new(
     configure_requires => {
         'Devel::AssertOS' => 0,
         'Alien::Base::ModuleBuild' => 0,
+        'Alien::autoconf' => 0,
+        'Alien::automake' => 0,
+        'Alien::libtool' => 0,
+        'Alien::gperf' => 0,
         'Module::Build' => 0,
     },
     build_requires => {
+        'Alien::autoconf' => 0,
+        'Alien::automake' => 0,
+        'Alien::libtool' => 0,
         # TODO: fallback to HTTP download when IO::Socket::SSL doesn't exist
-        'Alien::gperf' => 0,
         'IO::Socket::SSL' => 0,
     },
     recommends => {

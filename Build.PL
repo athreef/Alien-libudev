@@ -5,9 +5,14 @@ use Config;
 use Alien::autoconf;
 use Alien::automake;
 use Alien::libtool;
+use Alien::gperf;
 use Env qw( @PATH );
 
-unshift @ENV, Alien::automake->bin_dir, Alien::autoconf->bin_dir, Alien::libtool->bin_dir;
+unshift @ENV,
+    Alien::automake->bin_dir,
+    Alien::autoconf->bin_dir,
+    Alien::libtool->bin_dir,
+    Alien::gperf->bin_dir;
 
 my $build = Alien::Base::ModuleBuild->new(
     module_name => 'Alien::libudev',
@@ -16,12 +21,13 @@ my $build = Alien::Base::ModuleBuild->new(
     },
     alien_isolate_dynamic => 1,
     configure_requires => {
-        'Alien::Autotools' => '0.000_006',
+        'Devel::AssertOS' => 0,
         'Alien::Base::ModuleBuild' => 0,
         'Module::Build' => 0,
     },
     build_requires => {
         # TODO: fallback to HTTP download when IO::Socket::SSL doesn't exist
+        'Alien::gperf' => 0,
         'IO::Socket::SSL' => 0,
     },
     recommends => {

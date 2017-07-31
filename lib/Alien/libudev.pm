@@ -7,7 +7,7 @@ package Alien::libudev;
 
 use parent 'Alien::Base';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 =pod
 

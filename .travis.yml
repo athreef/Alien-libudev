@@ -11,6 +11,7 @@ perl:
   - "5.10"
   - "5.8"
 install:
-    cpanm --verbose --installdeps --notest . 
+  - cpanm --verbose --installdeps --notest . 
+  - perl -MAlien::gperf -e 'system Alien::gperf->bin_dir . "/gperf", "--version"'
 script:
   - perl Build.PL && ./Build test verbose=1 && ./Bild disttest verbose=1

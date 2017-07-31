@@ -5,6 +5,7 @@ author:
 build_requires:
   Alien::autoconf: '0'
   Alien::automake: '0'
+  Alien::gperf: '0.005'
   Alien::libtool: '0'
   ExtUtils::CBuilder: '0'
   IO::Socket::SSL: '0'
@@ -16,7 +17,7 @@ configure_requires:
   Alien::Base::ModuleBuild: '0'
   Alien::autoconf: '0'
   Alien::automake: '0'
-  Alien::gperf: '0'
+  Alien::gperf: '0.005'
   Alien::libtool: '0'
   Devel::AssertOS: '0'
   Module::Build: '0'

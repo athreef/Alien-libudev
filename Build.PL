@@ -2,19 +2,30 @@ use Alien::Base::ModuleBuild;
 use Devel::AssertOS qw[Linux];
 use Config;
 
-use Alien::autoconf;
-use Alien::automake;
-use Alien::libtool;
-use Alien::gperf;
-use Env qw( @PATH );
 
-unshift @ENV,
-    Alien::automake->bin_dir,
-    Alien::autoconf->bin_dir,
-    Alien::libtool->bin_dir,
-    Alien::gperf->bin_dir;
 
-my $build = Alien::Base::ModuleBuild->new(
+my $class = Alien::Base::ModuleBuild->subclass(
+        class => "Module::Build::AlienBuildWithGPerfInPath",
+        code => <<'SUBCLASS' );
+sub ACTION_build {
+    my $self = shift;
+    use Env qw( @PATH );
+    use Alien::autoconf;
+    #use Alien::automake;
+    use Alien::libtool;
+    use Alien::gperf;
+    unshift @PATH,
+        #Alien::automake->bin_dir,
+        Alien::autoconf->bin_dir,
+        Alien::libtool->bin_dir,
+        Alien::gperf->bin_dir;
+
+    $self->SUPER::ACTION_build;
+}
+SUBCLASS
+
+
+my $build = $class->new(
     module_name => 'Alien::libudev',
     license => 'perl',
     alien_bin_requires => {
@@ -23,21 +34,22 @@ my $build = Alien::Base::ModuleBuild->new(
     configure_requires => {
         'Devel::AssertOS' => 0,
         'Alien::Base::ModuleBuild' => 0,
+        'Module::Build' => 0,
         'Alien::autoconf' => 0,
         'Alien::automake' => 0,
         'Alien::libtool' => 0,
-        'Alien::gperf' => 0,
-        'Module::Build' => 0,
+        'Alien::gperf' => '0.005',
     },
     build_requires => {
         'Alien::autoconf' => 0,
         'Alien::automake' => 0,
         'Alien::libtool' => 0,
+        'Alien::gperf' => '0.005',
         # TODO: fallback to HTTP download when IO::Socket::SSL doesn't exist
         'IO::Socket::SSL' => 0,
     },
     recommends => {
-        'IO::Socket::SSL' => 0
+        'IO::Socket::SSL' => 0,
     },
     test_requires => {
         'Test::More'         => 0,

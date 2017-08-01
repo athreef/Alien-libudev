@@ -7,8 +7,6 @@ package Alien::libudev;
 
 use parent 'Alien::Base';
 
-our $VERSION = '0.11';
-
 =pod
 
 =encoding utf8

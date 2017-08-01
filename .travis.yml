@@ -1,4 +1,14 @@
 language: perl
+sudo: false
+
+install:
+  - perlbrew list
+  - cpanm -n Dist::Zilla
+  - dzil authordeps --missing | cpanm -n
+  - dzil listdeps   --missing | cpanm -n
+  - cpanm -n App::af
+  - af missing | cpanm -n
+
 perl:
   - "5.26"
   - "5.24"
@@ -7,11 +17,7 @@ perl:
   - "5.18"
   - "5.16"
   - "5.14"
-  - "5.12"
-  - "5.10"
-  - "5.8"
-install:
-  - cpanm --verbose --installdeps --notest . 
-  - perl -MAlien::gperf -e 'system Alien::gperf->bin_dir . "/gperf", "--version"'
+
 script:
-  - perl Build.PL && ./Build test verbose=1 && ./Bild disttest verbose=1
+  - dzil test -v
+

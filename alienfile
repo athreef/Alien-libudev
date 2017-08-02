@@ -3,6 +3,8 @@ use File::Copy qw(copy);
 use Env qw( @PATH );
 $^O eq 'linux' or die "OS unsupported. This is a Linux-only module\n";
 
+plugin 'PkgConfig' => 'libudev';
+
 share {
     requires 'Alien::autoconf' => '0.03';
     #requires 'Alien::automake' => '0.05';

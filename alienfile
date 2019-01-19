@@ -30,9 +30,9 @@ share {
     build [
         'autoreconf -i',
         './configure --prefix=%{.install.prefix} --disable-shared --with-pic',
-        'cd src/shared  && %{make}',
-        'cd src/libudev && %{make}',
-        'cd src/libudev && %{make} install',
+        '%{make} -C src/shared',
+        '%{make} -C src/libudev',
+        '%{make} -C src/libudev install'
     ];
 
     plugin 'Gather::IsolateDynamic' => ();

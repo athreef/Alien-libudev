@@ -1,7 +1,9 @@
 use alienfile;
 use File::Copy qw(copy);
 use Env qw( @PATH );
-$^O eq 'linux' or die "OS unsupported. This is a Linux-only module\n";
+if ($^O ne 'linux' and $ENV{FORCE_INSTALL} ne '1') {
+    die "OS unsupported. This is a Linux-only module\n";
+}
 
 plugin 'PkgConfig' => 'libudev';
 
